@@ -61,7 +61,7 @@ export default function App() {
             <div><dt>Open</dt><dd>{m.open}</dd></div>
           </dl>); })()}
       </header>
-      <p className="note">Paper trading only. Projections blend our model, Sleeper and a gradient-boosted model. "Our chance" mixes the model's probability with the market's (margin removed) by the trust setting; the model has not yet been tested against real lines.</p>
+      <p className="note">Paper trading only. Projections blend our model, Sleeper and a gradient-boosted model. "Our chance" mixes the model's probability with the market's (margin removed) by the trust setting. Since week 5 every probability is scored against real sportsbook lines, and paper bets settle from box scores.</p>
 
       <div className="tabs" role="tablist">
         {TABS.map(([k, label]) => <button key={k} type="button" role="tab" id={`tab-${k}`} aria-selected={tab === k} onClick={() => setTab(k)}>{label}</button>)}
