@@ -1,0 +1,28 @@
+# Local Python environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local data, trained models, and generated reports
+/data/
+/models/
+/projections/
+/models_transformer/
+/models_game/
+/graphify-out/
+/diagnostics/
+/snapshots/
+
+# Local credentials and editor settings
+.env
+.env.*
+!.env.example
+.DS_Store
+/site/data.json
+experiments/lstm_fix_out/
+experiments/model_alt_out.csv
+
+# Built dashboard bundle
+/site/index.html

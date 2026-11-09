@@ -1,0 +1,39 @@
+# Resolved dependency set verified for docs/next-implementations.md Stage 1.
+# Captured 2026-09-15 on Python 3.12.7, macOS-26.2-arm64-arm-64bit.
+#
+# nfl_data_py's own metadata pins pandas<2.0,numpy<2.0 -- stale, and false
+# for the versions below (see requirements.txt). Reproduce this file with:
+#   pip install pandas numpy pyarrow scikit-learn fastparquet appdirs
+#   pip install --no-deps nfl_data_py
+#   pip freeze > requirements-lock.txt
+#
+# --no-deps applies to nfl_data_py ONLY. Applying it to fastparquet as well
+# installs it without cramjam/fsspec, which leaves it importable-looking but
+# broken at first use ("No module named 'fsspec'").
+#
+# `pip check` against this set reports exactly two conflicts, both from
+# nfl_data_py's stale upper bounds on pandas and numpy. Any other conflict,
+# or any missing package, means something is wrong and must be investigated.
+#
+# Not a floor/ceiling range like requirements.txt -- this is what was
+# actually installed together and verified working (see
+# tests/test_snapshot.py and the smoke calls noted in requirements.txt).
+appdirs==1.4.4
+cloudpickle==3.1.2
+cramjam==2.12.1
+fastparquet==2026.5.0
+fsspec==2026.7.0
+joblib==1.6.0
+narwhals==2.26.0
+nfl_data_py==0.3.3
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.5
+pyarrow==25.0.1
+python-dateutil==2.9.0.post0
+scikit-learn==1.9.1
+scipy==1.18.1
+setuptools==84.0.0
+six==1.17.0
+threadpoolctl==3.7.0
+wheel==0.48.0

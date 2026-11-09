@@ -1,0 +1,28 @@
+# Data ingestion
+pandas>=2.2
+nfl_data_py>=0.3
+pyarrow>=16.0
+
+# Evaluation / modeling (Stage 1+, docs/next-implementations.md)
+scikit-learn>=1.9
+
+# KNOWN CONFLICT, VERIFIED HARMLESS (Stage 1 dependency check, 2026-09-15):
+# nfl_data_py 0.3.3's own metadata declares `pandas<2.0,numpy<2.0` -- stale,
+# and incompatible with pandas>=2.2 above (which the rest of this codebase
+# requires and already runs on). A plain `pip install -r requirements.txt`
+# will therefore either fail to build pandas from an old sdist, or downgrade
+# pandas/numpy under this package. Verified empirically instead: installed
+# nfl_data_py with `--no-deps` (skipping its stale pin) against
+# pandas==3.0.5/numpy==2.5.3, then called the two functions this project
+# actually uses -- both returned correct data:
+#   nfl_data_py.import_schedules([2023])  -> 285 rows, 46 columns
+#   nfl_data_py.import_pbp_data([2023])   -> 49,665 rows
+# Install order for a fresh .venv:
+#   pip install pandas numpy pyarrow scikit-learn fastparquet appdirs
+#   pip install --no-deps nfl_data_py
+# --no-deps is for nfl_data_py ONLY. Passing it for fastparquet too skips
+# cramjam/fsspec, which leaves fastparquet importable-looking but broken on
+# first real use ("No module named 'fsspec'").
+# Afterwards `pip check` must report exactly two conflicts, both nfl_data_py's
+# stale pandas/numpy upper bounds. Anything else means a broken environment.
+# See requirements-lock.txt for the exact resolved/verified version set.
