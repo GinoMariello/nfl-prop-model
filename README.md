@@ -2,7 +2,7 @@
 
 Projects NFL players' passing, rushing, receiving and reception stats each week, turns those projections into probabilities, and tests them against real sportsbook lines with a rules-based paper-trading system.
 
-<!-- TODO: add a dashboard screenshot here, e.g. ![Prop Board](docs/img/prop-board.png) -->
+![Prop Board dashboard: week 9 receptions lines with model projections, pick probabilities and confidence](docs/img/prop-board.png)
 
 ## Results (2026 season, live paper trading)
 
