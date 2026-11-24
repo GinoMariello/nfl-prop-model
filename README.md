@@ -59,3 +59,7 @@ cd site/app && npm test
 Python, PyTorch, Hugging Face Transformers, scikit-learn, pandas, SQLite, TypeScript, React, Vite.
 
 Built with help from AI coding assistants. The modeling choices, experiments and evaluation are my own.
+
+## License
+
+[PolyForm Noncommercial 1.0.0](LICENSE.md): free for personal, research and educational use; commercial use is not permitted.
