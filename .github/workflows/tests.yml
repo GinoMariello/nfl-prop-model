@@ -1,0 +1,30 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install pandas numpy pyarrow scikit-learn fastparquet appdirs transformers
+          pip install --no-deps nfl_data_py
+      # Tests that read the local SQLite database (data/nfl_stats.db, not in the repo) are left out.
+      - name: Run tests
+        run: |
+          for t in backtest baselines db_path_discipline dependency_smoke ingest ladder live_p_over \
+                   matchup_features metrics predict qb_starter_rows regressions report rolling_features \
+                   sleeper_blend snapshot snapshot_regressions stage0_regressions train vegas_features \
+                   walk_forward_ensemble; do
+            echo "::group::tests/test_$t.py"
+            python tests/test_$t.py
+            echo "::endgroup::"
+          done
