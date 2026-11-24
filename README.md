@@ -10,7 +10,7 @@ Projects NFL players' passing, rushing, receiving and reception stats each week,
 - **Bet filters:** several filters were frozen before their test weeks and then run forward. The best one won 64.1% of its bets against a 53.9% break-even (132–74, weeks 7–8), about 10 percentage points over break-even.
 - **Volume:** 100+ paper bets a week, placed and settled automatically.
 
-These are small samples from one season. The experiment notes in `docs/` record every test that failed as well as the ones that passed.
+These are small samples from one season. The [experiment protocols in `docs/`](docs/README.md) record every test that failed as well as the ones that passed.
 
 ## How it works
 
