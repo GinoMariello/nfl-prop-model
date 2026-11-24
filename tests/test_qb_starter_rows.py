@@ -7,6 +7,11 @@ Synthetic, no network, no database.
 
 Run: python3 test_qb_starter_rows.py
 """
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import pandas as pd
 
 from PlayerProjections import POSITION_STAT_COLUMNS, position_training_rows, qb_starter_rows

@@ -11,6 +11,11 @@ didn't silently change anything (wrong arg order, dropped line, etc.).
 
 Run: python3 test_prepare_position_training_data.py
 """
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import numpy as np
 
 from PlayerProjections import (

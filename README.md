@@ -47,8 +47,8 @@ cd site/app && npm install && npm run dev
 Tests are plain scripts using `assert`. Most use synthetic data and need no network:
 
 ```bash
-python3 test_ladder.py
-python3 test_sleeper_blend.py
+python3 tests/test_ladder.py
+python3 tests/test_sleeper_blend.py
 python3 tests/test_train.py
 python3 tests/test_backtest.py
 cd site/app && npm test

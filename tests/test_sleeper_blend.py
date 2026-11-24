@@ -5,8 +5,13 @@ sources a player has, rescaling when one is missing.
 
 Synthetic, no network, no database.
 
-Run: python3 test_sleeper_blend.py
+Run: python3 tests/test_sleeper_blend.py
 """
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import pandas as pd
 
 import PlayerProjections as pp

@@ -3,8 +3,13 @@ Regression checks for bugs that reached the scheduled jobs -- each test is named
 pins, and each one failed against the code before its fix. Synthetic data, no network, no database:
 the SQLite, schedule, id-crosswalk and ESPN calls are swapped for stand-ins.
 
-Run: .venv/bin/python test_regressions.py   (the scheduled jobs' interpreter: pandas 3)
+Run: .venv/bin/python tests/test_regressions.py   (the scheduled jobs' interpreter: pandas 3)
 """
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import os
 import tempfile
 import urllib.error

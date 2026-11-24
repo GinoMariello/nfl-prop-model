@@ -1,4 +1,9 @@
 """Offline Stage 0 regressions: python -m unittest discover -s tests -p test_stage0_regressions.py."""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import contextlib
 import io
 import json

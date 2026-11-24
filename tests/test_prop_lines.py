@@ -4,8 +4,13 @@ market, player and side, dropping unknown markets and outcomes without a line.
 
 Synthetic, no network.
 
-Run: python3 test_prop_lines.py
+Run: python3 tests/test_prop_lines.py
 """
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import pandas as pd
 
 from StatScraper import parse_game_lines, parse_prop_lines
